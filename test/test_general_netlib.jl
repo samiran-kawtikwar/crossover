@@ -26,7 +26,7 @@ probs = sort([f for f in probs if endswith(f, ".mps")])
 
 save_path = "/Users/sky/Desktop/computer/sky/projects/crossover/MIT-Lu-Lab/crossover/result/"
 if !isdir(save_path)
-    mkdir(save_path)
+    mkpath(save_path)
 end
 
 save_flag = true
@@ -37,7 +37,7 @@ time_limit = 300
 seed = 0
 epsilon = 1e-8
 lpmethod = 6
-rhs_shift = 0
+rhs_shift = 10
 
 presolve = true
 # presolve = false
