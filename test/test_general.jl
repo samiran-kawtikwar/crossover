@@ -4,7 +4,7 @@ using LinearAlgebra
 
 include("utils.jl")
 
-path = "/Users/sky/Desktop/computer/sky/solvers/dataset/netlib/feasible"
+path = expanduser("~/Xover-Project/data/netlib/mps/")
 probs = readdir(path)
 probs = sort([f for f in readdir(path) if endswith(f, ".mps")])
 

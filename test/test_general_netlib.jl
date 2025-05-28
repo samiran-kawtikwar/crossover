@@ -19,12 +19,12 @@ TEST_MODE_STR = Dict(
 test_mode = NETLIB_ALL
 # test_mode = NETLIB_SELF
 
-netlib_path = "/Users/sky/Desktop/computer/sky/solvers/dataset/netlib/feasible"
+netlib_path = expanduser("~/Xover-Project/data/netlib/mps/")
 
 probs = readdir(netlib_path)
 probs = sort([f for f in probs if endswith(f, ".mps")])
 
-save_path = "/Users/sky/Desktop/computer/sky/projects/crossover/MIT-Lu-Lab/crossover/result/"
+save_path = expanduser("~/Xover-Project/xover-jl/results/")
 if !isdir(save_path)
     mkpath(save_path)
 end
