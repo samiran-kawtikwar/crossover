@@ -64,7 +64,8 @@ function copt_solve_general(glp::GeneralLinearProgramming; lpmethod::Int64=6, pr
 
     # initialization
     model = Model(COPT.Optimizer)
-
+    # silence model outputs
+    set_optimizer_attribute(model, "Logging", 0)
     # modeling
     println("adding variables ...")
     @variable(model, glp.lb[i] <= x[i=1:glp.nCols] <= glp.ub[i])

@@ -78,7 +78,7 @@ end
 function copt_load_std_lp(cost::Vector{Float64}, A::AbstractMatrix{Float64}, b::Vector{Float64}, lb::Vector{Float64}, ub::Vector{Float64}, sense::SENSE, offset::Float64)
     # initialization
     model = Model(COPT.Optimizer)
-
+    set_optimizer_attribute(model, "Logging", 0)
     # modeling
     nRows, nCols = size(A)
     @variable(model, lb[i] <= x[i=1:nCols] <= ub[i])

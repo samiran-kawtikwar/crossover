@@ -254,6 +254,7 @@ function primal_push_general_model(crossover::Crossover)
     model = copt_load_lp(
         cost, A, lhs, rhs, lb, ub, MINIMIZE, offset
     )
+    set_optimizer_attribute(model, "Logging", 0)
 
     return model
 end
@@ -630,7 +631,7 @@ function dual_push_general_model(crossover)
         MINIMIZE,
         offset
     )
-
+    set_optimizer_attribute(model, "Logging", 0)
     return model
 end
 
